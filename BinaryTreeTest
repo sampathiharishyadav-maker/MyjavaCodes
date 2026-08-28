@@ -1,0 +1,37 @@
+import java.util.*;
+
+class BinaryTreeTest {
+    public static void main(String[] args) {
+
+        ArrayList<Integer> a = new ArrayList<>();
+        Scanner sc = new Scanner(System.in);
+        char ch;
+
+        do {
+            System.out.println("\nBinary Tree Operations");
+            System.out.println("1. Insert");
+            System.out.println("2. Delete");
+
+            System.out.print("Enter your choice: ");
+            int choice = sc.nextInt();
+
+            System.out.print("Enter integer element: ");
+            int x = sc.nextInt();
+
+            if (choice == 1)
+                a.add(x);
+            else if (choice == 2)
+                a.remove(Integer.valueOf(x));
+
+            Collections.sort(a);
+
+            System.out.print("In order : ");
+            for (int n : a)
+                System.out.print(n + " ");
+
+            System.out.print("\nDo you want to continue (Type y or n): ");
+            ch = sc.next().charAt(0);
+
+        } while (ch == 'y' || ch == 'Y');
+    }
+}
