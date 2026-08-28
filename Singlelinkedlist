@@ -1,0 +1,54 @@
+import java.util.*;
+
+public class SingleLinkedlist {
+    public static void main(String[] args) {
+
+        Scanner sc = new Scanner(System.in);
+        LinkedList<Integer> list = new LinkedList<>();
+        int ch;
+
+        do {
+            System.out.println("\n1.Insert First");
+            System.out.println("2.Insert Last");
+            System.out.println("3.Delete First");
+            System.out.println("4.Display");
+            System.out.println("0.Exit");
+            System.out.print("Enter choice: ");
+
+            ch = sc.nextInt();
+
+            switch (ch) {
+                case 1:
+                    System.out.print("Enter value: ");
+                    list.addFirst(sc.nextInt());
+                    break;
+
+                case 2:
+                    System.out.print("Enter value: ");
+                    list.addLast(sc.nextInt());
+                    break;
+
+                case 3:
+                    if (!list.isEmpty())
+                        list.removeFirst();
+                    else
+                        System.out.println("List Empty");
+                    break;
+
+                case 4:
+                    System.out.println("List = " + list);
+                    break;
+
+                case 0:
+                    System.out.println("Exit");
+                    break;
+
+                default:
+                    System.out.println("Wrong Choice");
+            }
+
+        } while (ch != 0);
+
+        sc.close();
+    }
+}
